@@ -32,10 +32,12 @@
   --neutral-50: hsl(189, 47%, 97%);
   --white: hsl(0, 100%, 100%);
   --font-family: "Space Mono", monospace;
-  --font-size: 24px;
+  --font-size: 1.5rem;
+  --font-size-small: 1rem;
   --font-weight: 700;
   --line-height: 1.5;
-  --border-radius: 10px;
+  --border-radius: 30px;
+  --border-radius-small: 5px;
 }
 
 * {
@@ -51,7 +53,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 40px;
-  padding: 40px;
+  padding: 20px;
   height: 100vh;
 }
 
@@ -59,4 +61,85 @@ section {
   font-family: var(--font-family);
   font-size: var(--font-size);
   line-height: var(--line-height);
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 30px 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section label,
+section p {
+  color: var(--neutral-500);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-small);
+}
+
+.calculation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calculation input {
+  background-color: var(--neutral-50);
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: 10px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  color: var(--neutral-900);
+}
+
+.calculation input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px var(--primary-400);
+}
+.calculation input::placeholder {
+  color: var(--neutral-400);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--neutral-900);
+  border-radius: var(--border-radius);
+}
+
+.result div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result div p {
+  color: var(--white);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-small);
+}
+
+.result div p:nth-child(2) {
+  color: var(--primary-400);
+}
+
+.result div p span {
+  color: var(--neutral-200);
+}
+
+.result button {
+  background-color: var(--primary-400);
+  text-transform: uppercase;
+  color: var(--neutral-900);
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  border-radius: var(--border-radius-small);
+  padding: 5px;
+  border: none;
+  cursor: pointer;
 }

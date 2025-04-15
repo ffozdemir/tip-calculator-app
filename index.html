@@ -21,8 +21,11 @@
         <div class="calculation">
           <div class="bill">
             <label for="bill-input">Bill</label>
-            <span><img src="./images/icon-dollar.svg" alt="" /></span
-            ><input type="text" id="bill-input" placeholder="0" />
+            <div>
+              <span
+                ><img src="./images/icon-dollar.svg" alt="icon-dollar" /></span
+              ><input type="number" id="bill-input" placeholder="0" />
+            </div>
           </div>
           <div class="amounts">
             <p for="tip-input">Select Tip %</p>
@@ -62,27 +65,35 @@
                 id="fifty-percent"
                 value="50"
               />
-              <label for="custom-tip">Custom</label>
-              <input type="text" id="custom-tip" placeholder="Custom" />
+              <input
+                type="number"
+                id="custom-tip"
+                placeholder="Custom"
+                aria-label="Custom"
+              />
             </div>
           </div>
           <div class="people">
             <label for="number-of-people">Number of People</label>
-            <span><img src="./images/icon-person.svg" alt="" /></span
-            ><input type="text" id="number-of-people" placeholder="0" />
+            <span><img src="./images/icon-person.svg" alt="icon-person" /></span
+            ><input type="number" id="number-of-people" placeholder="0" />
           </div>
         </div>
         <div class="result">
-          <p>
-            Tip Amount
-            <span>/ person</span>
-          </p>
-          <p id="tip-amount">$0.00</p>
-          <p>
-            Total
-            <span>/ person</span>
-          </p>
-          <p id="total-amount">$0.00</p>
+          <div>
+            <p>
+              Tip Amount <br />
+              <span>/ person</span>
+            </p>
+            <p id="tip-amount">$0.00</p>
+          </div>
+          <div>
+            <p>
+              Total <br />
+              <span>/ person</span>
+            </p>
+            <p id="total-amount">$0.00</p>
+          </div>
           <button type="button" id="reset-btn">Reset</button>
         </div>
       </section>
