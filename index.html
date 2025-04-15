@@ -1,36 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-
-</head>
-<body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-
-</body>
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header><img src="./images/logo.svg" alt="splitter-logo" /></header>
+    <main>
+      <section>
+        <div class="calculation">
+          <div class="bill">
+            <label for="bill-input">Bill</label>
+            <span><img src="./images/icon-dollar.svg" alt="" /></span
+            ><input type="text" id="bill-input" placeholder="0" />
+          </div>
+          <div class="amounts">
+            <p for="tip-input">Select Tip %</p>
+            <div class="amounts-grid">
+              <label for="five-percent">5%</label>
+              <input
+                type="radio"
+                name="tip-amount"
+                id="five-percent"
+                value="5"
+              />
+              <label for="ten-percent">10%</label>
+              <input
+                type="radio"
+                name="tip-amount"
+                id="ten-percent"
+                value="10"
+              />
+              <label for="fifteen-percent">15%</label>
+              <input
+                type="radio"
+                name="tip-amount"
+                id="fifteen-percent"
+                value="15"
+              />
+              <label for="twenty-five-percent">25%</label>
+              <input
+                type="radio"
+                name="tip-amount"
+                id="twenty-five-percent"
+                value="25"
+              />
+              <label for="fifty-percent">50%</label>
+              <input
+                type="radio"
+                name="tip-amount"
+                id="fifty-percent"
+                value="50"
+              />
+              <label for="custom-tip">Custom</label>
+              <input type="text" id="custom-tip" placeholder="Custom" />
+            </div>
+          </div>
+          <div class="people">
+            <label for="number-of-people">Number of People</label>
+            <span><img src="./images/icon-person.svg" alt="" /></span
+            ><input type="text" id="number-of-people" placeholder="0" />
+          </div>
+        </div>
+        <div class="result">
+          <p>
+            Tip Amount
+            <span>/ person</span>
+          </p>
+          <p id="tip-amount">$0.00</p>
+          <p>
+            Total
+            <span>/ person</span>
+          </p>
+          <p id="total-amount">$0.00</p>
+          <button type="button" id="reset-btn">Reset</button>
+        </div>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+  </body>
 </html>
