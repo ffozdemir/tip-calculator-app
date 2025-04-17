@@ -1,0 +1,1 @@
+const numberOfPeopleInputElement = document.getElementById("#number-of-people"); //error eklenecek

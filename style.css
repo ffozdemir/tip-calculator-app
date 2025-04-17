@@ -32,6 +32,7 @@
   --neutral-50: hsl(189, 47%, 97%);
   --white: hsl(0, 100%, 100%);
   --font-family: "Space Mono", monospace;
+  --font-size-large: 2.5rem;
   --font-size: 1.5rem;
   --font-size-small: 1rem;
   --font-weight: 700;
@@ -127,13 +128,18 @@ section p {
   content: url("./images/icon-person.svg");
 }
 
-.amounts-grid {
+ul.amounts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  list-style: none;
 }
 
-.amounts-grid div {
+ul.amounts-grid input[type="radio"] {
+  display: none;
+}
+
+ul.amounts-grid input[type="radio"] + label {
   background-color: var(--neutral-900);
   border-radius: var(--border-radius-small);
   padding: 10px;
@@ -143,28 +149,40 @@ section p {
   color: var(--white);
   font-size: var(--font-size);
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.amounts-grid div:active,
-.amounts-grid div:focus {
+ul.amounts-grid input[type="radio"]:checked + label {
   background-color: var(--primary-400);
+  color: var(--neutral-900);
 }
-
-
 
 .result {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 40px;
+  padding: 40px 20px;
   background-color: var(--neutral-900);
   border-radius: var(--border-radius);
 }
 
 .result div {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  gap: 20px;
+}
+
+.result div div {
+  display: flex;
+  flex-direction: row;
+}
+
+.result div div p:last-child {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
 }
 
 .result div p {
@@ -190,7 +208,44 @@ section p {
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   border-radius: var(--border-radius-small);
-  padding: 5px;
+  padding: 10px;
   border: none;
   cursor: pointer;
+}
+
+@media (min-width: 48rem) {
+  main {
+    max-width: 1000px;
+  }
+
+  section {
+    flex-direction: row;
+  }
+
+  .calculation {
+    flex: 1 1 50%;
+  }
+
+  ul.amounts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .result {
+    flex: 1 1 50%;
+    justify-content: space-between;
+  }
+
+  .result div {
+    gap: 40px;
+  }
+
+  .result div div p:last-child {
+    font-weight: var(--font-weight);
+    font-size: var(--font-size-large);
+  }
+
+  .result button {
+    font-size: var(--font-size);
+  }
 }
