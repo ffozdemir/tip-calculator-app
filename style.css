@@ -218,6 +218,10 @@ ul.amounts-grid input[type="radio"]:checked + label {
     max-width: 1000px;
   }
 
+  header {
+    margin-top: 40px;
+  }
+
   section {
     flex-direction: row;
   }
