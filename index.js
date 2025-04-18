@@ -6,6 +6,7 @@ const totalAmountEl = document.getElementById("total-amount");
 const resetBtnEl = document.getElementById("reset-btn");
 const errorBorder = "1px solid red";
 const allRadioElements = document.querySelectorAll('input[type="radio"]');
+const allNumberInputs = document.querySelectorAll('input[type="number"]');
 
 const calculateTip = () => {
   const billAmount = checkInput(billInputEl);
@@ -26,13 +27,18 @@ const calculateTip = () => {
     tipPercentage = 0;
   }
 
-  const tipAmount = ((billAmount * tipPercentage) / numberOfPeople).toFixed(2);
-  const totalAmount = (
-    billAmount / numberOfPeople +
-    parseFloat(tipAmount)
-  ).toFixed(2);
-
-  renderTipAmount(tipAmount, totalAmount);
+  if (billAmount > 0 && numberOfPeople > 0) {
+    const tipAmount = ((billAmount * tipPercentage) / numberOfPeople).toFixed(
+      2
+    );
+    const totalAmount = (
+      billAmount / numberOfPeople +
+      parseFloat(tipAmount)
+    ).toFixed(2);
+    renderTipAmount(tipAmount, totalAmount);
+  } else {
+    renderTipAmount(0.0, 0.0);
+  }
 };
 
 const renderTipAmount = (tipAmount, totalAmount) => {
@@ -45,9 +51,8 @@ const checkInput = (element) => {
   if (value <= 0) {
     element.style.border = errorBorder;
     document.querySelector(".error").style.display = "block";
-    document.querySelector(".error").textContent =
-      "Can't be zero or negative";
-    return 1;
+    document.querySelector(".error").textContent = "Can't be zero or negative";
+    return null;
   } else {
     element.style.border = "none";
     document.querySelector(".error").style.display = "none";
@@ -71,13 +76,13 @@ const reset = () => {
 
 resetBtnEl.addEventListener("click", reset);
 
-document.querySelectorAll('input[type="number"]').forEach((input) => {
+allNumberInputs.forEach((input) => {
   input.addEventListener("input", () => {
     calculateTip();
   });
 });
 
-document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+allRadioElements.forEach((radio) => {
   radio.addEventListener("change", () => {
     calculateTip();
   });

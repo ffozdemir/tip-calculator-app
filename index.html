@@ -22,11 +22,11 @@
           <div class="bill">
             <label for="bill-input">Bill</label>
             <div>
-              <input type="number" id="bill-input" placeholder="0" />
+              <input type="number" id="bill-input" placeholder="0" min="0" />
             </div>
           </div>
           <div class="amounts">
-            <p for="tip-input">Select Tip %</p>
+            <p>Select Tip %</p>
             <ul class="amounts-grid">
               <li class="amount">
                 <input
@@ -79,15 +79,23 @@
                   id="custom-tip-input"
                   placeholder="Custom"
                   aria-label="Custom"
+                  min="0"
                 />
               </li>
             </ul>
           </div>
           <div class="people">
-            <label for="number-of-people">Number of People <span class="error"></span></label>
-            
+            <label for="number-of-people"
+              >Number of People <span class="error"></span
+            ></label>
+
             <div>
-              <input type="number" id="number-of-people" placeholder="0" />
+              <input
+                type="number"
+                id="number-of-people"
+                placeholder="0"
+                min="0"
+              />
             </div>
           </div>
         </div>
