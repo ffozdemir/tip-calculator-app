@@ -106,6 +106,14 @@ section p {
   color: var(--neutral-400);
 }
 
+.error {
+  color: red;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight);
+  display: none;
+  text-align: right;
+}
+
 .bill div,
 .people div {
   position: relative;
@@ -126,6 +134,12 @@ section p {
 
 .people div::before {
   content: url("./images/icon-person.svg");
+}
+
+.people label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 ul.amounts-grid {
