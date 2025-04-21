@@ -1,7 +1,7 @@
 const billInputEl = document.getElementById("bill-input");
 const customTipInputEl = document.getElementById("custom-tip-input");
 const numberOfPeopleInputEl = document.getElementById("number-of-people");
-let tipAmountEl = document.getElementById("tip-amount");
+const tipAmountEl = document.getElementById("tip-amount");
 const totalAmountEl = document.getElementById("total-amount");
 const resetBtnEl = document.getElementById("reset-btn");
 const errorBorder = "1px solid red";
@@ -37,7 +37,7 @@ const calculateTip = () => {
     ).toFixed(2);
     renderTipAmount(tipAmount, totalAmount);
   } else {
-    renderTipAmount(0.0, 0.0);
+    renderTipAmount(0.00, 0.00);
   }
 };
 
@@ -61,7 +61,7 @@ const checkInput = (element) => {
 };
 
 const reset = () => {
-  document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+  allRadioElements.forEach((radio) => {
     radio.checked = false;
   });
   billInputEl.value = "";
